@@ -1,10 +1,12 @@
 const express = require("express");
+require("dotenv").config();
 const productosRouter = require("./routes/productos");
 const errorHandler = require("./middlewares/errorHandler");
 
 const { auth } = require("express-oauth2-jwt-bearer");
 
-require("dotenv").config();
+
+
 
 const oauthCheck = auth({
   audience: process.env.OAUTH_AUDIENCE,
